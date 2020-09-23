@@ -1,0 +1,167 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Tokyowater Drinking Station 設置場所検索</title>
+    <meta name="description"
+      content="東京都水道局が設置したTokyowater Drinking Stationや都内にある様々な給水スポットを検索するサイトです">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'media/logo.png' %}">
+  </hrad>
+
+  <body>
+    <div class="wrapper">
+
+      <header>
+        <div class="container_header">
+          <h1 class="header-item">
+            <span class="logo">
+              <a href="{% url 'index' %}"><img src="{% static "media/logo.png" %}" alt="logo"></a>
+            </span>
+            <a href="{% url 'index' %}">
+              Tokyowater Drinking Station 設置場所検索
+            </a>
+          </h1>
+          <div class="what"><a href="{% url 'menu' %}?p=1">Tokyowater Drinking Stationとは？</a></div>
+        </div><!-- /.container_header -->
+        <nav class="cp_fullscreenmenu">
+          <input class="toggle" type="checkbox">
+          <div class="hamburger"><span></span></div>
+          <div class="menu">
+            <div>
+              <ul>
+                <li><a href="{% url 'menu' %}?p=1">Tokyowater&#32;<br>Drinking Stationとは？</a></li>
+                <li><a href="{% url 'menu' %}?p=2">当サイトについて</a></li>
+                <li><a href="{% url 'menu' %}?p=3">お問い合わせ</a></li>
+                <li><a href="{% url 'menu' %}?p=4">その他</a></li>
+              </ul>
+            </div>
+          </div><!-- /.menu -->
+        </nav>
+      </header>
+
+      <div class="container_another">
+
+        <h3>Tokyowater Drinking Stationとは？</h3>
+        <p>
+          東京都水道局が設置するおいしい東京水が飲める水飲栓です。<br>
+          都内800箇所を超える様々な場所に設置されており、<br>
+          無料で利用できます(施設内や駅改札内の一部有料エリアは入場料が必要)。<br>
+          東京都にお住まいの方やご通学、ご通勤の方はもしかしたら一度は見かけたことがあるかもしれません。<br>
+        </p>
+        <p>
+          公園や学校内でお馴染みの飲み口型と、<br>
+          マイボトルに入れるボトルディスペンサー型の2種類があります。<br>
+          ボトルディスペンサー型には押すタイプとセンサータイプがあり、<br>
+          昨今のプラスチックごみ削減などの動きから今後も増えていくと思われます。<br>
+          非接触のセンサータイプはウイルス等の感染予防に最適で、もっと増えればいいなと願います。<br>
+        </p>
+        <div class="pic">
+          <div class="item">
+            <img src="{% static "media/fountain.jpg" %}" alt="fountain">
+            <p>飲み口型<br>(プッシュタイプ)</p>
+          </div>
+          <div class="item">
+            <img src="{% static "media/bottle.jpg" %}" alt="bottle">
+            <p>ボトルディスペンサー型<br>(プッシュタイプ)</p>
+          </div>
+          <div class="item">
+            <img src="{% static "media/sensor.jpg" %}" alt="sensor">
+            <p>ボトルディスペンサー型<br>(センサータイプ)</p>
+          </div>
+        </div>
+        <br>
+        <p>
+          また他にも屋外型やペダル型など様々な種類があります。<br>
+          特に東京国際フォーラムの地上広場(有楽町駅の入り口を出てすぐ)<br>
+          に設置されている屋外型ボトルディスペンサー式水飲栓は近未来的なデザインを感じます。<br>
+          夜になるとより一層雰囲気が出るそうです。
+          お近くを通った際に立ち寄ってみてはいかがでしょうか。<br>
+        </p>
+        <div class="pic">
+          <div class="item">
+            <img src="{% static "media/outside.jpg" %}" alt="outside">
+            <p>屋外型ボトルディスペンサー式水飲栓</p>
+          </div>
+          <div class="item">
+            <img src="{% static "media/pedal.jpg" %}" alt="pedal">
+            <p>飲み口型(ペダルタイプ)</p>
+          </div>
+        </div>
+        <br>
+        <p>
+          Tokyowater Drinking Stationの利便性の高さや環境配慮型のサービス面から、
+          今後の街づくりや環境問題への取り組みに対して様々な可能性を秘めていると思います。<br>
+          何よりも個人で気軽に利用できるので、誰もがそれらの取り組みに参加できます。
+          水を切らした際、必要になった際にどんどん活用していきましょう。<br>
+        </p>
+        <p>
+          さらに情報を知りたい方はぜひ<a href="https://www.waterworks.metro.tokyo.jp/">東京都水道局のホームページ</a>をご覧ください。
+        </p>
+        <p>
+          <br>※現在(2020年9月)は新型コロナウイルス感染症対策の観点から飲み口タイプが一部利用できない場合があります。<br>
+        </p>
+        <br>
+
+        <h3>利用方法</h3>
+        <p>
+          <li>飲み口型の場合</li>
+              &emsp;各機種のボタン(画像の赤枠)を押すとノズルから水が出ます。<br>
+          <div class="howto">
+            <img src="{% static "media/howto_1.jpg" %}" alt="howto">
+          </div>
+          <br>
+          <li>ボトルディスペンサー型(プッシュタイプ)の場合</li>
+              &emsp;ボトルを指定の位置に設置してボタン(画像の赤枠)を押すと水が出ます。<br>
+          <div class="howto">
+            <img src="{% static "media/howto_2.jpg" %}" alt="howto">
+          </div>
+          <br>
+          <li>ボトルディスペンサー型(センサータイプ)の場合</li>
+            &emsp;ボトルを指定の位置に近づけると水が出ます。<br>
+            &emsp;※500ml以下のボトルの場合あふれる場合があります。<br>
+          <div class="howto">
+            <img src="{% static "media/howto_3.jpg" %}" alt="howto">
+          </div>
+          <br>
+        </p>
+
+        <h3>おすすめ</h3>
+        <p>
+          最近、節約や環境問題に対する取り組みの一環からかマイボトルを持っている人を多く見かけます。<br>
+          お店でも大容量タイプから持ち運びタイプまで様々な水筒・ボトルが並べられるようになった感じます。<br>
+          そんな中でも私は100円ショップで売られているボトルを愛用しております。<br>
+          保温保冷の機能がないボトルですが、非常に軽く洗いやすいのでマイボトル用に最適です。<br>
+          また飲み口の取り外しが可能で、お茶やドリンク用にも使えます。<br>
+          なによりシンプルなため様々な場面で使用することができて非常に便利です。<br>
+          ラインナップが豊富で可愛らしいデザインも多くあるのでぜひ。<br>
+          <div class="pic">
+            <div class="item">
+              <img src="{% static "media/mybottle_1.jpg" %}" alt="mybottle">
+            </div>
+            <div class="item">
+              <img src="{% static "media/mybottle_2.jpg" %}" alt="mybottle">
+            </div>
+          </div>
+          <br>
+          <p>
+            東京の水に関してより詳しく知りたい方は<a href="https://www.waterworks.metro.tokyo.jp/">水道局ホームページ</a>や<a href="https://www.suidorekishi.jp/">東京都水道歴史館</a>がおすすめです!!
+          </p>
+        </p>
+      </div><!-- /.container_another -->
+
+      <footer>
+        <p><small>&copy; 2020 Tokyowater Drinking Station 設置場所検索</small></p>
+      </footer>
+
+    </div><!-- /.wrapper -->
+  </body>
+
+</html>

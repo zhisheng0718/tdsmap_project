@@ -1,0 +1,89 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Tokyowater Drinking Station 設置場所検索</title>
+    <meta name="description"
+      content="東京都水道局が設置したTokyowater Drinking Stationや都内にある様々な給水スポットを検索するサイトです">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'media/logo.png' %}">
+  </hrad>
+
+  <body>
+
+    <header>
+      <div class="container_header">
+        <h1 class="header-item">
+          <span class="logo">
+            <a href="{% url 'index' %}"><img src="{% static "media/logo.png" %}" alt="logo"></a>
+          </span>
+          <a href="{% url 'index' %}">
+            Tokyowater Drinking Station 設置場所検索
+          </a>
+        </h1>
+        <div class="what"><a href="{% url 'menu' %}?p=1">Tokyowater Drinking Stationとは？</a></div>
+      </div><!-- /.container_header -->
+      <nav class="cp_fullscreenmenu">
+        <input class="toggle" type="checkbox">
+        <div class="hamburger"><span></span></div>
+        <div class="menu">
+          <div>
+            <ul>
+              <li><a href="{% url 'menu' %}?p=1">Tokyowater&#32;<br>Drinking Stationとは？</a></li>
+              <li><a href="{% url 'menu' %}?p=2">当サイトについて</a></li>
+              <li><a href="{% url 'menu' %}?p=3">お問い合わせ</a></li>
+              <li><a href="{% url 'menu' %}?p=4">その他</a></li>
+            </ul>
+        </div><!-- /.menu -->
+      </nav>
+    </header>
+
+    <nav class="change">
+      <div><a href="{% url 'index_map' %}">地図に切り替える</a></div>
+    </nav>
+
+    <div class="type_sel">
+      <div class="intro">
+        <span><a href="{% url 'menu' %}?p=1">&#9654;Tokyowater Drinking Stationとは？</a></span>
+      </div>
+      <div class="notice">
+        <span>タイプから探す場合はコチラ</span>
+      </div>
+      <div class="type-grid">
+        <a href="{% url 'select-type' %}?type=ボトルディスペンサー型" class="type-btn">ボトルディスペンサー型を探す</a>
+        <a href="{% url 'select-type' %}?type=飲み口型" class="type-btn">飲み口型を探す</a>
+        <a href="{% url 'select-type' %}?type=ボトルディスペンサー型・飲み口型" class="type-btn">両タイプある場所を探す</a>
+      </div><!-- /.type-grid -->
+    </div><!-- /.type_sel -->
+
+    <div class="area_sel">
+      <div class="notice">
+        <span>エリアから探す場合はコチラ</span><br>
+        <span>一番下でマップも確認できます！！</span>
+      </div>
+      <div class="area-grid">
+        {% for item in object %}
+          <a href="{% url 'list' %}?area={{item.area}}" class="area-btn" ><span>{{item.area}}({{item.total}}台)</span><span>&#8811;</span></a>
+        {% endfor %}
+      </div><!-- /.area-grid -->
+    </div><!-- /.area_sel -->
+
+    <div class="tdsmap">
+      <iframe loading="lazy" src="https://www.google.com/maps/d/embed?mid=1TOict5ZqxW11P5DEpOfWtC_DE4kOlJjE"></iframe>
+    </div>
+    <div style="text-align:center;">※表示に時間がかかる場合があります。</div><br>
+
+    <footer>
+      <p><small>&copy; 2020 Tokyowater Drinking Station 設置場所検索</small></p>
+    </footer>
+
+  </body>
+
+</html>

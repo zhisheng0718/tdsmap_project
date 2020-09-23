@@ -1,0 +1,62 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Tokyowater Drinking Station 設置場所検索</title>
+    <meta name="description"
+      content="東京都水道局が設置したTokyowater Drinking Stationや都内にある様々な給水スポットを検索するサイトです">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'media/logo.png' %}">
+  </hrad>
+
+  <body>
+    <div class="wrapper">
+
+      <header>
+        <div class="container_header">
+          <h1 class="header-item">
+            <span class="logo">
+              <a href="{% url 'index' %}"><img src="{% static "media/logo.png" %}" alt="logo"></a>
+            </span>
+            <a href="{% url 'index' %}">
+              Tokyowater Drinking Station 設置場所検索
+            </a>
+          </h1>
+          <div class="what"><a href="{% url 'menu' %}?p=1">Tokyowater Drinking Stationとは？</a></div>
+        </div><!-- /.container_header -->
+        <nav class="cp_fullscreenmenu">
+          <input class="toggle" type="checkbox">
+          <div class="hamburger"><span></span></div>
+          <div class="menu">
+            <div>
+              <ul>
+                <li><a href="{% url 'menu' %}?p=1">Tokyowater&#32;<br>Drinking Stationとは？</a></li>
+                <li><a href="{% url 'menu' %}?p=2">当サイトについて</a></li>
+                <li><a href="{% url 'menu' %}?p=3">お問い合わせ</a></li>
+                <li><a href="{% url 'menu' %}?p=4">その他</a></li>
+              </ul>
+            </div>
+          </div><!-- /.menu -->
+        </nav>
+      </header>
+
+      <div class="container_another">
+        <div class="contact">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevbZYaBR62QUYvxSkczMplmSL5rb-X_Wqg__Qv1-OVdYr1rw/viewform?embedded=true">読み込んでいます…</iframe>
+        </div>
+      </div>
+
+      <footer>
+        <p><small>&copy; 2020 Tokyowater Drinking Station 設置場所検索</small></p>
+      </footer>
+
+    </div><!-- /.wrapper -->
+  </body>
+</html>

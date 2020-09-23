@@ -1,0 +1,91 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Tokyowater Drinking Station 設置場所検索</title>
+    <meta name="description"
+      content="東京都水道局が設置したTokyowater Drinking Stationや都内にある様々な給水スポットを検索するサイトです">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'media/logo.png' %}">
+  </hrad>
+
+  <body>
+    <div class="wrapper">
+
+      <header>
+        <div class="container_header">
+          <h1 class="header-item">
+            <span class="logo">
+              <a href="{% url 'index' %}"><img src="{% static "media/logo.png" %}" alt="logo"></a>
+            </span>
+            <a href="{% url 'index' %}">
+              Tokyowater Drinking Station 設置場所検索
+            </a>
+          </h1>
+          <div class="what"><a href="{% url 'menu' %}?p=1">Tokyowater Drinking Stationとは？</a></div>
+        </div><!-- /.container_header -->
+        <nav class="cp_fullscreenmenu">
+          <input class="toggle" type="checkbox">
+          <div class="hamburger"><span></span></div>
+          <div class="menu">
+            <div>
+              <ul>
+                <li><a href="{% url 'menu' %}?p=1">Tokyowater&#32;<br>Drinking Stationとは？</a></li>
+                <li><a href="{% url 'menu' %}?p=2">当サイトについて</a></li>
+                <li><a href="{% url 'menu' %}?p=3">お問い合わせ</a></li>
+                <li><a href="{% url 'menu' %}?p=4">その他</a></li>
+              </ul>
+            </div>
+          </div><!-- /.menu -->
+        </nav>
+      </header>
+
+      <div class="container_another">
+
+        <h3>目的</h3>
+          当サイトは東京都内に設置されている給水スポットを検索するサイトです。<br>
+          東京水道局が設置したTokyowater Drinking Stationを中心に飲水可能な場所を検索できます。<br>
+          SDGs(持続可能な開発目標)の実現や熱中症予防対策の一助になればと思い作った次第です。<br>
+          検索機能のみではありますが活用していただけると嬉しいです。<br>
+        <br>
+
+        <h3>今後の予定</h3>
+          以下の更新を予定しております。<br>
+          &#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;<br>
+          &#9312; 給水スポットの追加および更新<br>
+          &#9313; 英語・中国語などへの言語対応<br>
+          &#9314; デザインの改善<br>
+          &#9315; センサー型の検索機能の追加<br>
+          &#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;&#9476;<br>
+          コロナ渦のため都内を散策することがなかなかできず給水スポットを探すことができませんが、<br>
+          新しい給水スポットがわかり次第、随時更新できればと思います。<br>
+          もし当サイトに掲載されていない給水スポットがありましたら<br>
+          <span>お手数ですが、<a href="{% url 'menu' %}?p=3">お問い合わせフォーム</a>までご連絡いただけると幸いです。</span><br>
+          今後ともよろしくお願いいたします。<br>
+        <br>
+
+        <h3>注意・免責事項</h3>
+          Tokyowater Drinking Station 設置場所検索(以下「当サイト」)は、<br>
+          東京都オープンデータカタログサイトに
+          掲載されているオープンデータと個人の調査をもとに作られております。
+          当サイトの掲載情報においては可能な限り注意を払っておりますが、
+          必ずしもその内容の正確性・完全性・安全性等について保証するものではありません。
+          また、当サイトを利用して生じたいかなる損害、不都合等の一切の責任を負いかねますのでご了承ください。
+          事前に通知いたしますがサイト名、URLを変更する場合がございます。
+
+      </div><!-- /.container_another -->
+
+      <footer>
+        <p><small>&copy; 2020 Tokyowater Drinking Station 設置場所検索</small></p>
+      </footer>
+
+    </div><!-- /.wrapper -->
+  </body>
+</html>
